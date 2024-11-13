@@ -1,6 +1,7 @@
 {
     "vim": "\\data\\app\\gVimPortable\\gVimPortable.exe",
     "miv": "\\data\\app\\gVimPortable\\gVimPortable.exe",
+    "lp": "\\data\\app\\lp\\lp.exe",
     "name": "sonjed",
     "pass": "@sonjed2024"
 }

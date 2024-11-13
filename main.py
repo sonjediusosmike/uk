@@ -15,6 +15,8 @@ def maintain():
             "exit",
             "cd",
             "vim",
+            "miv",
+            "lp",
             "cls",
         )
         pwd = os.getcwd()
@@ -69,6 +71,12 @@ def maintain():
             vim = os.getcwd()
             vim += a["vim"]
             subprocess.run(vim)
+        elif cmd[0] == "lp":
+            sfiles = open("config.json", "r")
+            a = json.load(sfiles)
+            lp = os.getcwd()
+            lp += a["lp"]
+            subprocess.run(lp)
         elif cmd[0] == "miv":
             sfiles = open("config.json", "r")
             a = json.load(sfiles)
@@ -185,6 +193,12 @@ def main():
             vim = os.getcwd()
             vim += a["vim"]
             subprocess.run(vim)
+        elif cmd[0] == "lp":
+            sfiles = open("config.json", "r")
+            a = json.load(sfiles)
+            lp = os.getcwd()
+            lp += a["lp"]
+            subprocess.run(lp)
         elif cmd[0] == "miv":
             sfiles = open("config.json", "r")
             a = json.load(sfiles)
@@ -260,6 +274,12 @@ def main():
                 vim = os.getcwd()
                 vim += a["vim"]
                 subprocess.run(vim)
+            elif cmd[0] == "lp":
+                sfiles = open("config.json", "r")
+                a = json.load(sfiles)
+                lp = os.getcwd()
+                lp += a["lp"]
+                subprocess.run(lp)
             elif cmd[0] == "miv":
                 sfiles = open("config.json", "r")
                 a = json.load(sfiles)
