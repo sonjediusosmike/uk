@@ -11,14 +11,12 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
-:so
-|2,0,1731569502,,"so"
-:e $HOME/_gvimrc
-|2,0,1731569496,,"e $HOME/_gvimrc"
 :wq
 |2,0,1731491848,,"wq"
 :w
 |2,0,1731491846,,"w"
+:e $HOME/_gvimrc
+|2,0,1731491834,,"e $HOME/_gvimrc"
 :e $HOME/_gvimrc!
 |2,0,1731491824,,"e $HOME/_gvimrc!"
 :e $env/_gvimrc
@@ -39,18 +37,14 @@
 # Registers:
 
 # File marks:
-'0  1  17  ~\_gvimrc
-|4,48,1,17,1731571988,"~\\_gvimrc"
-'1  1  18  ~\_gvimrc
-|4,49,1,18,1731491848,"~\\_gvimrc"
-'2  1  0  ~\_gvimrc!
-|4,50,1,0,1731491828,"~\\_gvimrc!"
-'3  1  18  C:\Users\sinaf\uk\$env\_gvimrc
-|4,51,1,18,1731491816,"C:\\Users\\sinaf\\uk\\$env\\_gvimrc"
+'0  1  18  ~\_gvimrc
+|4,48,1,18,1731491848,"~\\_gvimrc"
+'1  1  0  ~\_gvimrc!
+|4,49,1,0,1731491828,"~\\_gvimrc!"
+'2  1  18  C:\Users\sinaf\uk\$env\_gvimrc
+|4,50,1,18,1731491816,"C:\\Users\\sinaf\\uk\\$env\\_gvimrc"
 
 # Jumplist (newest first):
--'  1  17  ~\_gvimrc
-|4,39,1,17,1731571988,"~\\_gvimrc"
 -'  1  18  ~\_gvimrc
 |4,39,1,18,1731491848,"~\\_gvimrc"
 -'  1  18  ~\_gvimrc
@@ -253,8 +247,8 @@
 # History of marks within files (newest to oldest):
 
 > ~\_gvimrc
-	*	1731570424	0
-	"	1	17
+	*	1731491846	0
+	"	1	18
 	^	1	19
 	.	1	18
 	+	1	18

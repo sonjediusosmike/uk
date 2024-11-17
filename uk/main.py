@@ -2,8 +2,11 @@ import os, sys, subprocess, json, pyfiglet
 from colorama import Style
 from fernet import Fernet
 from pynput import keyboard
+
+
 def clear():
     os.system("cls")
+
 
 def maintain():
     print("your sudo")
@@ -118,6 +121,7 @@ def mt():
     key = keys.encode()
     f = Fernet(key)
     it = f.decrypt(c)
+    it = it.decode()
     if ig == it:
         print("ok your getting a promotion in")
         maintain()
@@ -148,11 +152,18 @@ def m():
 
 
 def msudo():
-    ig = input("password:")
-    f = open("config.json", "r")
-    j = json.load(f)
+    ig = input("password[sudo]:")
+    n = open("config.json", "r")
+    j = json.load(n)
     b = j["pass"]
-    if ig == b:
+    c = str(b)
+    c = c.encode()
+    keys = "Y6jp1k09psK7NBg_HFJ8VOyuDIW3yoEtcUZy1BcuhzE="
+    key = keys.encode()
+    f = Fernet(key)
+    it = f.decrypt(c)
+    it = it.decode()
+    if ig == it:
         print("ok your being promoted")
     else:
         print("it didn't work")
@@ -338,6 +349,7 @@ def main():
         else:
             print("it is the wrong command")
             continue
+
 
 if __name__ == "__main__":
     m()
