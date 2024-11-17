@@ -1,7 +1,15 @@
-import os, sys, subprocess, json, errors
+import os, sys, subprocess, json, pyfiglet
+from colorama import Style
+from fernet import Fernet
+from pynput import keyboard
+
+
+def clear():
+    os.system("cls")
 
 
 def maintain():
+    print("your sudo")
     while True:
         h = (
             "pwd",
@@ -30,7 +38,6 @@ def maintain():
                 print(iver)
         elif cmd[0] == "touch":
             file = open(cmd[1], "w")
-        elif cmd[0] == "rm":
             os.remove(cmd[1])
         elif cmd[0] == "rm-rf":
             os.removedirs(cmd[1])
@@ -93,16 +100,29 @@ def maintain():
             print(ver)
         elif cmd[0] == "mkdir":
             os.makedirs(cmd[1])
+        elif cmd[0] == "rstclr":
+            print(Style.RESET_ALL)
+            continue
+        elif cmd[0] == "":
+            continue
         else:
-            errors.typee()
+            print("it is the wrong command")
+            continue
 
 
 def mt():
     ig = input("password[sudo]:")
-    f = open("config.json", "r")
-    j = json.load(f)
+    n = open("config.json", "r")
+    j = json.load(n)
     b = j["pass"]
-    if ig == b:
+    c = str(b)
+    c = c.encode()
+    keys = "Y6jp1k09psK7NBg_HFJ8VOyuDIW3yoEtcUZy1BcuhzE="
+    key = keys.encode()
+    f = Fernet(key)
+    it = f.decrypt(c)
+    it = it.decode()
+    if ig == it:
         print("ok your getting a promotion in")
         maintain()
     else:
@@ -113,11 +133,18 @@ def mt():
 def m():
     i = input("username:")
     ig = input("password:")
-    f = open("config.json", "r")
-    j = json.load(f)
+    n = open("config.json", "r")
+    j = json.load(n)
+    keys = "Y6jp1k09psK7NBg_HFJ8VOyuDIW3yoEtcUZy1BcuhzE="
+    key = keys.encode()
+    f = Fernet(key)
     a = j["name"]
     b = j["pass"]
-    if i == a and ig == b:
+    c = str(b)
+    c = c.encode()
+    it = f.decrypt(c)
+    it = it.decode()
+    if i == a and ig == it:
         print("ok your being logged in")
     else:
         print("it didn't work")
@@ -125,11 +152,18 @@ def m():
 
 
 def msudo():
-    ig = input("password:")
-    f = open("config.json", "r")
-    j = json.load(f)
+    ig = input("password[sudo]:")
+    n = open("config.json", "r")
+    j = json.load(n)
     b = j["pass"]
-    if ig == b:
+    c = str(b)
+    c = c.encode()
+    keys = "Y6jp1k09psK7NBg_HFJ8VOyuDIW3yoEtcUZy1BcuhzE="
+    key = keys.encode()
+    f = Fernet(key)
+    it = f.decrypt(c)
+    it = it.decode()
+    if ig == it:
         print("ok your being promoted")
     else:
         print("it didn't work")
@@ -137,6 +171,7 @@ def msudo():
 
 
 def main():
+    print(pyfiglet.figlet_format("salaam unix"))
     while True:
         pwd = os.getcwd()
         h = (
@@ -217,9 +252,12 @@ def main():
             os.makedirs(cmd[1])
         elif cmd[0] == "su":
             mt()
+        elif cmd[0] == "rstclr":
+            print(Style.RESET_ALL)
+            continue
         elif cmd[0] == "sudo":
             msudo()
-
+            print("your sudo hooray")
             h = (
                 "pwd",
                 "ls",
@@ -298,10 +336,19 @@ def main():
                 os.makedirs(cmd[1])
             elif cmd[0] == "su":
                 mt()
+            elif cmd[0] == "rstclr":
+                print(Style.RESET_ALL)
+                continue
+            elif cmd[0] == "":
+                continue
             else:
-                errors.typee()
+                print("it is the wrong command")
+                continue
+        elif cmd[0] == "":
+            continue
         else:
-            errors.typee()
+            print("it is the wrong command")
+            continue
 
 
 if __name__ == "__main__":
