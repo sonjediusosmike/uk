@@ -25,6 +25,7 @@ def maintain():
             "vim",
             "miv",
             "lp",
+            "explore",
             "cls",
         )
         pwd = os.getcwd()
@@ -84,6 +85,12 @@ def maintain():
             lp = os.getcwd()
             lp += a["lp"]
             subprocess.run(lp)
+        elif cmd[0] == "explore":
+            sfiles = open("config.json", "r")
+            a = json.load(sfiles)
+            exp = os.getcwd()
+            exp += a["explore"]
+            subprocess.run(exp)
         elif cmd[0] == "miv":
             sfiles = open("config.json", "r")
             a = json.load(sfiles)
@@ -103,6 +110,9 @@ def maintain():
         elif cmd[0] == "rstclr":
             print(Style.RESET_ALL)
             continue
+        elif cmd[0] == "he":
+            a = "m.a.s " "a.f " "l.t " "and " "s.m"
+            print(a)
         elif cmd[0] == "":
             continue
         else:
@@ -234,6 +244,12 @@ def main():
             lp = os.getcwd()
             lp += a["lp"]
             subprocess.run(lp)
+        elif cmd[0] == "explore":
+            sfiles = open("config.json", "r")
+            a = json.load(sfiles)
+            exp = os.getcwd()
+            exp += a["explore"]
+            subprocess.run(exp)
         elif cmd[0] == "miv":
             sfiles = open("config.json", "r")
             a = json.load(sfiles)
@@ -315,9 +331,9 @@ def main():
             elif cmd[0] == "lp":
                 sfiles = open("config.json", "r")
                 a = json.load(sfiles)
-                lp = os.getcwd()
-                lp += a["lp"]
-                subprocess.run(lp)
+                exp = os.getcwd()
+                exp += a["explore"]
+                subprocess.run(exp)
             elif cmd[0] == "miv":
                 sfiles = open("config.json", "r")
                 a = json.load(sfiles)
@@ -339,11 +355,17 @@ def main():
             elif cmd[0] == "rstclr":
                 print(Style.RESET_ALL)
                 continue
+            elif cmd[0] == "he":
+                a = "m.a.s" "a.f" "l.t" "and" "s.m"
+                print(a)
             elif cmd[0] == "":
                 continue
             else:
                 print("it is the wrong command")
                 continue
+        elif cmd[0] == "he":
+            a = "m.a.s" "a.f" "l.t" "and" "s.m"
+            print(a)
         elif cmd[0] == "":
             continue
         else:
